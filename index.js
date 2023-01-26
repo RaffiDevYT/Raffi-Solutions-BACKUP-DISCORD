@@ -41,4 +41,4 @@ fs.readdir("./commands/", (_err, files) => {
 });
 
 // Login
-client.login("MTAxNDQyNTk5ODQ0OTcwOTIxNg.GmCaIV.PAyz3COB3Qm6h1RkSSpKx2pl9q1dz8ySU4ijMg");
+client.login("");
