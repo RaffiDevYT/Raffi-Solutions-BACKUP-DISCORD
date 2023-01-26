@@ -13,13 +13,13 @@ module.exports = {
 
     // If the member doesn't have enough permissions
     if(!message.member.hasPermission('MANAGE_MESSAGES')){
-        return message.channel.send(':x: You need to have the manage messages permissions to create a backup in this server.');
+        return message.channel.send('<:MAWrong:1055502057899032646> You need to have the manage messages permissions to create a backup in this server.');
     }
 
     const backupID = args.join(' ');
 
     if (!backupID)
-        return message.channel.send(':x: Please specify a valid backup ID!');
+        return message.channel.send('<:MAWrong:1055502057899032646> Please specify a valid backup ID!');
 
     backup.fetch(backupID).then((backup) => {
 
@@ -39,9 +39,9 @@ module.exports = {
     }).catch((err) => {
 
         if (err === 'No backup found')
-            return message.channel.send(':x: No backup found for ID '+backupID+'!');
+            return message.channel.send('<:MAWrong:1055502057899032646> No backup found for ID '+backupID+'!');
         else
-            return message.channel.send(':x: An error occurred: '+(typeof err === 'string') ? err : JSON.stringify(err));
+            return message.channel.send('<:MAWrong:1055502057899032646> An error occurred: '+(typeof err === 'string') ? err : JSON.stringify(err));
 
     });
     }
