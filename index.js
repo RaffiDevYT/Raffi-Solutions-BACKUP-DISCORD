@@ -1,10 +1,18 @@
 const fs = require('fs');
-
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const config = require('./config.json');
-client.config = config;
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Working!')
+})
+
+app.listen(port, () => {
+  console.log(`👌 Your app is listening at port ${port}`)
+})
 
 /* Load all events */
 fs.readdir("./events/", (_err, files) => {
@@ -19,6 +27,7 @@ fs.readdir("./events/", (_err, files) => {
 });
 
 client.commands = new Discord.Collection();
+client.config = require('./config.json')
 
 /* Load all commands */
 fs.readdir("./commands/", (_err, files) => {
@@ -32,4 +41,4 @@ fs.readdir("./commands/", (_err, files) => {
 });
 
 // Login
-client.login(config.token);
+client.login("MTAxNDQyNTk5ODQ0OTcwOTIxNg.GmCaIV.PAyz3COB3Qm6h1RkSSpKx2pl9q1dz8ySU4ijMg");

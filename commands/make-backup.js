@@ -1,7 +1,14 @@
 const backup = require('discord-backup');
 const config = require('../config.json');
 
-exports.run = async (client, message, args) => {
+module.exports = {
+    name: "make-backup",
+    aliases: ["make"],
+    description: "Displays the list of servers the bot is in!",
+    ownerOnly: true,
+    run: async (bot, message, args) => {
+      if (!message.guild.me.hasPermission("ADMINISTRATOR"))
+        return message.channel.send("I Dont Have Permissions")
 
     // If the member doesn't have enough permissions
     if(!message.member.hasPermission('MANAGE_MESSAGES')){
@@ -17,5 +24,5 @@ exports.run = async (client, message, args) => {
         return message.channel.send(':x: An error occurred, please check if the bot is administrator!');
 
     });
-
+    }
 };

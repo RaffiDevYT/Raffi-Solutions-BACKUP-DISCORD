@@ -1,4 +1,4 @@
 {
-    "token": "Your Discord Bot token",
-    "prefix": "b!"
+  "prefix": ".r",
+  "ownerID": "847710668005572610"
 }

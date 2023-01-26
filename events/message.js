@@ -1,4 +1,5 @@
 const config = require('../config.json');
+const ownerID = require('../config.json')
 
 module.exports = (client, message) => {
     // Ignore all bots
@@ -16,6 +17,13 @@ module.exports = (client, message) => {
   
     // If that command doesn't exist, silently exit and do nothing
     if (!cmd) return;
+
+    // Owner Only
+    if (command.ownerOnly) {
+        if (!client.config.ownerID.includes(message.author.id))
+         message.channel.send(`:x: This command can only be used by the bot owner.`)
+         return;
+      }
   
     // Run the command
     cmd.run(client, message, args);

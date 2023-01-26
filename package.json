@@ -1,11 +1,12 @@
 {
-  "name": "backups-bot",
+  "name": "Xenon-backup",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Androz2091 <androz2091@gmail.com>",
+  "author": "NPG#0001",
   "license": "MIT",
   "dependencies": {
     "discord-backup": "^2.3.0",
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.3",
+    "express": "^4.17.1"
   }
 }

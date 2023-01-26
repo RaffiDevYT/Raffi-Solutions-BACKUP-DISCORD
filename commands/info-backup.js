@@ -1,7 +1,15 @@
 const Discord = require('discord.js');
 const backup = require('discord-backup');
 
-exports.run = async (client, message, args) => {
+module.exports = {
+    name: "info-backup",
+    aliases: ["info-bac"],
+    description: "Displays the list of servers the bot is in!",
+    usage: " ",
+    ownerOnly: true,
+    run: async (bot, message, args) => {
+      if (!message.guild.me.hasPermission("ADMINISTRATOR"))
+        return message.channel.send("I Dont Have Permissions")
 
     // If the member doesn't have enough permissions
     if(!message.member.hasPermission('MANAGE_MESSAGES')){
@@ -36,5 +44,5 @@ exports.run = async (client, message, args) => {
             return message.channel.send(':x: An error occurred: '+(typeof err === 'string') ? err : JSON.stringify(err));
 
     });
-
+    }
 };
